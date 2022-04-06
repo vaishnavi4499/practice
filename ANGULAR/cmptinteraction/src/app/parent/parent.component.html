@@ -1,0 +1,18 @@
+
+<div class="container">
+ <div class="card">
+     <div class="card-header">
+         <h1>Parent component</h1>
+         <h3> {{value}}</h3>
+     </div>
+     <div class="card-body">
+         data: <input type="text" class="form-control" [ngModel]="sampleText"/>
+         <input type="button" value="send data" (click)="parentToChild()" >
+
+        <app-child (sendDataFromChild)="child($event)" [parentData]="parentData"></app-child>
+
+        <!-- <h3>{{value}}</h3> -->
+     </div>
+ </div>
+</div>
+

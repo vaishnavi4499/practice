@@ -1,0 +1,6 @@
+export const PAGE_HEADING :String = "Project Details"
+export const NAME_NULL : String = " name cannot be empty"
+export const PROJECTID_NULL: String = "project Id cannot be empty"
+export const PROJECTNAME_NULL: String = "project name cannot be empty"
+export const DURATION_NULL: String = "duration of the project cannot be empty"
+export const DURATION_INVALID: String = "duration should be between 1-3 months"

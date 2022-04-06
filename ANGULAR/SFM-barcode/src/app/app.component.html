@@ -1,0 +1,33 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div style="text-align:center"> 
+    <textarea placeholder="bc-value" [(ngModel)]="value"></textarea> ><br> <br>
+
+       <select placeholder="bc-format" [(ngModel)]="format">
+            <option *ngFor="let code of codeList" [value]="code">{{code}}</option>
+        </select><br> <br>
+        <input type="checkbox" [(ngModel)]="display">bc-display-value
+ </div>
+  
+
+<div style="text-align:center">
+  <ngx-barcode6 *ngFor="let bcValue of values" [bc-value]="bcValue"
+   [bc-display-value]="display" [bc-format]="format"> 
+  </ngx-barcode6>
+</div>
+
+
+
+<!--    npm install --save ngx-barcode6 jsbarcode@3.11.5 -->
+
+
+<!--   <div style="text-align:center">
+  <ngx-barcode6 [bc-format]="'CODE128'" [bc-value]="'abc'" [bc-display-value]="true">
+  </ngx-barcode6>
+</div>-->
+
+

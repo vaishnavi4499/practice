@@ -1,0 +1,66 @@
+<div class="center">
+    <h2> Test Form</h2>
+    <form class="example-form" [formGroup]="userForm" >
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="Name" placeholder="Enter your name" required>
+        <mat-error *ngIf="userForm.get('Name')?.errors?.required">
+            {{FORMCONST.NAME_NULL}}
+        </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>ProjectId</mat-label>
+            <input type="text" matInput formControlName="ProjectId" placeholder="Enter your ProjectId">
+            <mat-error *ngIf="userForm.get('ProjectId')?.errors?.required">
+                {{FORMCONST.PROJECTID_NULL}}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>ProjectName</mat-label>
+            <input type="text" matInput formControlName="ProjectName" placeholder="Enter your ProjectName">
+            <mat-error *ngIf="userForm.get('ProjectName')?.errors?.required">
+                {{FORMCONST.PROJECTNAME_NULL}}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>duration</mat-label>
+            <input type="text" matInput formControlName= "duration" min="1" max="3" placeholder="Enter duration">
+            <mat-error *ngIf="userForm.get('duration')?.errors?.required">
+                {{FORMCONST.DURATION_NULL}}
+            </mat-error>
+            <mat-error *ngIf="userForm.get('duration')?.errors?.min">
+                {{FORMCONST.DURATION_INVALID}}
+            </mat-error>
+            <mat-error *ngIf="userForm.get('duration')?.errors?.max">
+                {{FORMCONST.DURATION_INVALID}}
+            </mat-error>
+        </mat-form-field> <br>
+
+        <button mat-button color="warn" id="button"  type ="submit" [disabled] = "userForm.invalid" (click)="addData()">Add </button>
+        <button mat-button color="warn" id="button1" (click)="clearAll()" > Clear All </button>
+    </form>
+</div>
+
+<table class = "content-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ProjectName</th>
+            <th>ProjectId</th>
+            <th>duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of userList">
+         <td> <span>{{item.Name}}</span></td>
+        <td> <span>{{item.ProjectId}}</span></td>
+        <td> <span>{{item.ProjectName}}</span></td>
+        <td> <span>{{item.duration}}</span></td>
+</tr>
+
+
+    </tbody>
+</table>

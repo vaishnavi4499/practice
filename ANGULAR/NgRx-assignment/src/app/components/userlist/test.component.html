@@ -1,0 +1,26 @@
+<div class = "content-table">
+        <h3>user data</h3>
+        <div>
+            <app-userform></app-userform>
+        </div>
+        <table class="center">
+            <thead>
+                <tr>
+                    <th>username</th>
+                    <th>email</th>
+                    <th>phone </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let post of datasource$ | async">
+                    <td style="word-break: break-all">{{post.username}}</td>
+                    <td style="word-break: break-all">{{post.email}}</td>
+                    <td style="word-break: break-all">{{post.phone}}</td>
+                    <td>
+                        <button class="btn btn-danger" (click)="onDeletePost(post.username)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+</div>

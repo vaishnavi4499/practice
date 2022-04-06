@@ -1,0 +1,67 @@
+<div class="center">
+    <h2> Test Form</h2>
+<form class="example-form" [formGroup]="postForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>UserName</mat-label>
+        <input matInput formControlName="username" placeholder="enter username">
+        <mat-error *ngIf="postForm.get('username')?.errors?.required">
+            {{FORMCONST.USERNAME_NULL}}
+        </mat-error>
+    </mat-form-field> <br>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="email Id" >
+        <mat-error *ngIf="postForm.get('email')?.errors?.required">
+            {{FORMCONST.EMAIL_NULL}}
+        </mat-error>
+        <mat-error *ngIf="postForm.get('email')?.errors?.email">
+            {{FORMCONST.EMAIL_INVALID}}
+        </mat-error>
+    </mat-form-field><br>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phone No.</mat-label>
+        <input matInput formControlName="phone" placeholder="Phone Number">
+        <mat-error *ngIf="postForm.get('phone')?.errors?.required">
+            {{FORMCONST.PHONENUMBER_NULL}}
+        </mat-error>
+        <mat-error *ngIf="postForm.get('phone')?.errors?.minlength">
+            {{FORMCONST.PHONENUMBER_INVALID}}
+        </mat-error>
+    </mat-form-field> <br>
+
+    <button mat-raised-button color="primary" [disabled] = "postForm.invalid" (click)="onAddPost()">Add </button>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div>
+    <form [formGroup]="postForm" >
+        <div>
+            <label for="">username</label>
+            <input type="text" class="form-control" formControlName="username"/>
+        </div>
+        <div>
+            <label for="">email</label>
+            <input type="text" class="form-control" formControlName="email"/>
+        </div>
+        <div>
+            <label for="">phone</label>
+            <input type="text" class="form-control" formControlName="phone"/>
+        </div>
+
+        <div>
+            <button type="button" (click)="onAddPost()">add post</button>
+        </div>
+    </form>
+</div> -->

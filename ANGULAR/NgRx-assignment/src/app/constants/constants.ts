@@ -1,0 +1,6 @@
+export const PAGE_HEADING: String = "User Data"
+export const EMAIL_NULL: String = " Email cannot be empty"
+export const USERNAME_NULL: String = "user name cannot be empty"
+export const PHONENUMBER_NULL: String = "phone number  cannot be empty"
+export const EMAIL_INVALID: String = "enter a valid email id"
+export const PHONENUMBER_INVALID: String = "enter a valid phone number"
